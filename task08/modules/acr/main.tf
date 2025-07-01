@@ -17,22 +17,10 @@ resource "azurerm_container_registry_task" "build_task" {
   }
 
   docker_step {
-    dockerfile_path      = "task08/application/Dockerfile"
-    context_path         = "https://github.com/apujanyan/epm-08.git#main"
+    dockerfile_path      = "Dockerfile"
+    context_path         = "https://github.com/apujanyan/epm-08.git#main:task08/application"
     context_access_token = var.git_pat
     image_names          = ["${var.docker_image_name}:latest"]
-  }
-
-  source_trigger {
-    name           = "source_trigger"
-    events         = ["commit"]
-    repository_url = "https://github.com/apujanyan/epm-08.git"
-    source_type    = "Github"
-
-    authentication {
-      token      = var.git_pat
-      token_type = "PAT"
-    }
   }
 
   tags = var.tags
