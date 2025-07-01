@@ -1,5 +1,5 @@
 name_prefix       = "cmtr-d4qm9uvw-mod8"
-location          = "eastasia"
+location          = "northeurope"
 redis_capacity    = 2
 redis_sku         = "Basic"
 redis_sku_family  = "C"
