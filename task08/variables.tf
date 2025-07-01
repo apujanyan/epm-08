@@ -48,6 +48,12 @@ variable "aci_sku" {
   type        = string
 }
 
+variable "git_pat" {
+  sensitive   = true
+  description = "Git pat."
+  type        = string
+}
+
 variable "tags" {
   description = "Tags for resources."
   type        = map(string)
