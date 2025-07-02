@@ -1,19 +1,19 @@
 resource "azurerm_container_group" "this" {
-  name = var.name
-  location = var.location
+  name                = var.name
+  location            = var.location
   resource_group_name = var.resource_group_name
-  dns_name_label = var.name
-  ip_address_type = "Public"
-  os_type = "Linux"
+  dns_name_label      = var.name
+  ip_address_type     = "Public"
+  os_type             = "Linux"
 
   container {
-    name = "app"
-    image = "${var.acr_login_server}/${var.docker_image_name}:latest"
-    cpu = "1.0"
+    name   = "app"
+    image  = "${var.acr_login_server}/${var.docker_image_name}:latest"
+    cpu    = "1.0"
     memory = "2"
 
     ports {
-      port = 8080
+      port     = 8080
       protocol = "TCP"
     }
 

@@ -30,12 +30,12 @@ variable "family" {
 
 variable "redis_hostname_secret_name" {
   description = "Redis hostname."
-  type = string
+  type        = string
 }
 
 variable "redis_primary_key_secret_name" {
   description = "Redis primary key."
-  type = string
+  type        = string
 }
 
 variable "key_vault_id" {

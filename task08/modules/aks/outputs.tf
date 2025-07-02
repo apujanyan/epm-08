@@ -3,6 +3,10 @@ output "aks_id" {
   value       = azurerm_kubernetes_cluster.this.id
 }
 
+output "aks_name" {
+  value = azurerm_kubernetes_cluster.this.name
+}
+
 output "kube_config" {
   description = "Kubernetes configuration"
   value       = azurerm_kubernetes_cluster.this.kube_config
